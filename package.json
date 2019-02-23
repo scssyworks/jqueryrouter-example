@@ -1,0 +1,33 @@
+{
+  "name": "jqueryrouter-example",
+  "version": "1.0.0",
+  "description": "JQuery router example",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "Example"
+  ],
+  "author": "Sachin Singh",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jquerydeparam": "^1.1.2",
+    "bootstrap": "^4.3.1",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "rollup": "^1.2.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.0"
+  }
+}
