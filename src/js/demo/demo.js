@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import 'bootstrap';
-import { router, route } from "../jquery.router";
+import { router, route } from 'jqueryrouter';
 import 'bootstrap/dist/css/bootstrap.css';
 import './demo.css';
+
 
 const _cache = {};
 const demo = {

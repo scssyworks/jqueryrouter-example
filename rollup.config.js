@@ -24,7 +24,11 @@ export default [
                     moduleDirectory: "node_modules"
                 }
             }),
-            commonjs(),
+            commonjs({
+                namedExports: {
+                    "jqueryrouter": ["router", "route"]
+                }
+            }),
             babel({
                 exclude: "node_modules/**"
             }),
