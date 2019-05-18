@@ -6,32 +6,57 @@
         <ol>
             <li>Using route params</li>
             <li>Using query strings</li>
-            <li>Using web storage</li>
+            <li>Using history API</li>
         </ol>
     </p>
-    <p>We have already seen an example of route params. How do we use query string to persist data?</p>
-    <p>Well! you can use the syntax below:</p>
+    <p>We have already seen an example of route params. In this demo we will explore query strings and history API for data persistence</p>
+    <p><b>Query Strings:</b></p>
+    <p>Using query strings it's easy to persist data as they are formed as part of URL. Silk router appends the query string to the current route.</p>
     <pre>
         <code>
-    $.router.set({
+    router.set({
         route: '/demos/demo3',
         queryString: 'q=value&r=othervalue'
     });</code>
     </pre>
-    <p>Using this syntax you can append a query string to your route. Query string data is passed to handler as query object shown below:</p>
+    <p>You can also use the shorthand approach:</p>
     <pre>
         <code>
-    $.route('/demos/demo3', function (data, params, <b>query</b>) {
+    router.set('/demos/demo3?q=value&r=othervalue');</code>
+    </pre>
+    <p>Silk router parses the query string and converts it to an object before passing it to the route handler.</p>>
+    <pre>
+        <code>
+    route('/demos/demo3', (data) => {
+        const { query } = data;
         console.log(query); <span class="comment">// Should print { q: 'value', r: 'othervalue' }</span>
     });</code>
     </pre>
-    <p>In order to make this example work, you need to have following peer dependency installed:</p>
-    <p><a href="https://www.npmjs.com/package/jquerydeparam">JQuery deparam</a></p>
+    <p>Silk router uses <a href="https://www.npmjs.com/package/deparam.js">Deparam.js</a> to transform query string to an object.</p>
+    <p></p>
     <button class="btn btn-primary js-query">Try it!</button>
     <br />
     <br />
-    <p>Your data:</p>
+    <p><b>Query string object:</b></p>
     <pre class="js-query-data">No data!</pre>
-    <p>Another way to persist data is to use web storage. How you persist data for a given route depends on your implementation. There is a neat plugin available called <code>LZ Storage</code>. It provide ways to compress data before storing it in local storage.</p>
-    <p>Check it out: <a href="https://www.npmjs.com/package/lzstorage">LZ Storage</a></p>
+    <p><b>Using history API:</b></p>
+    <p>History API provides built-in support for data persistence. Silk router leverages this feature and also provides a fallback mechanism for cross-browser support.</p>
+    <p>Silk router uses <a href="https://www.npmjs.com/package/lzstorage">LZ Storage</a> for this. It also compresses data before storing it in the browser.</p>
+    <pre>
+        <code>
+    router.set({
+        route: '/demos/demo3',
+        data: {
+            sample: 'Hello World!'
+        }
+    });
+    
+    route('/demos/demo3', (...args) => {
+        const [{ data }] = args;
+        console.log(data); <span class="comment">// Prints { sample: 'Hello World' }</span>
+    });</code>
+    </pre>
+    Results:
+    <pre class="js-storage-data"></pre>
+    To check if this data was persisted, try refreshing the page.
 </div>

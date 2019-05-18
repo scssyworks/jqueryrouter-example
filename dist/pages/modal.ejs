@@ -48,8 +48,9 @@
     <b>Bind route handler for modal.</b>
     <pre>
         <code>
-    $.route('/demos/demo2/modalroute/:progress', function (data, params) {
-        var progress = +params.progress;
+    route('/demos/demo2/modalroute/:progress', function (data) {
+        const { params } = data;
+        let progress = +params.progress;
         ...
     });</code>
     </pre>
@@ -57,8 +58,9 @@
     <p>If modal is not open, open the modal and activate the wizard step based on current progress.</p>
     <pre>
         <code>
-    $.route('/demos/demo2/modalroute/:progress', function (data, params) {
-        var progress = +params.progress;
+    route('/demos/demo2/modalroute/:progress', function (data) {
+        const { params } = data;
+        let progress = +params.progress;
         if (!$('.modal').hasClass('show')) {
             $('.modal').modal('show');
         }
@@ -73,7 +75,7 @@
     <pre>
         <code>
     $('.js-wizard-btn').on('click', function () {
-        $.router.set(<b>'/demos/demo2/modalroute/1'</b>);
+        router.set(<b>'/demos/demo2/modalroute/1'</b>);
     });</code>
     </pre>
     <b>Step 4:</b>
@@ -81,19 +83,19 @@
     <pre>
         <code>
     $('.js-proceed-step').on('click', function () {
-        var totalSteps = $('.wizard-sections').length;
-        var currentStep = +$('.wizard-sections').filter('.active').data('step');
+        let totalSteps = $('.wizard-sections').length;
+        let currentStep = +$('.wizard-sections').filter('.active').data('step');
         if (currentStep === totalSteps) {
             <span class="comment">// Close modal</span>
             $('.modal').modal('hide');
             <span class="comment">// Go back in history</span>
-            $.router.set('/demos/demo2'); <span class="comment">// Re-setting the original route</span>
+            router.set('/demos/demo2'); <span class="comment">// Re-setting the original route</span>
         } else {
             <span class="comment">// Trigger route for next step</span>
-            $.router.set(`/demos/demo2/modalroute/${<b>++currentStep</b>}`);
+            router.set(`/demos/demo2/modalroute/${<b>++currentStep</b>}`);
         }
     });
         </code>
     </pre>
-    <p>There you go! You just implemented routing in overlay wizards. Try refreshing the page on any particular step.</p>
+    <p>There! We just implemented routing in overlay wizards. Try refreshing the page on any particular step.</p>
 </div>
