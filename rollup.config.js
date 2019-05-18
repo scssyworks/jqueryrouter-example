@@ -2,7 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import babel from "rollup-plugin-babel";
-import { uglify } from "rollup-plugin-uglify";
+import { terser } from "rollup-plugin-terser";
 
 export default [
     {
@@ -20,19 +20,18 @@ export default [
                 extract: true
             }),
             resolve({
+                mainFields: ["main"],
                 customResolveOptions: {
                     moduleDirectory: "node_modules"
                 }
             }),
             commonjs({
                 namedExports: {
-                    "jqueryrouter": ["router", "route"]
+                    "silkrouter": ["router", "route", "unroute"]
                 }
             }),
-            babel({
-                exclude: "node_modules/**"
-            }),
-            uglify()
+            babel(),
+            terser()
         ]
     }
 ]

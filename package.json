@@ -1,7 +1,7 @@
 {
-  "name": "jqueryrouter-example",
-  "version": "2.1.0",
-  "description": "JQuery router example",
+  "name": "silkrouter-example",
+  "version": "3.0.0-beta.6",
+  "description": "Silk router example",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -15,22 +15,23 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.3.1",
-    "jquerydeparam": "^1.1.2",
-    "jqueryrouter": "^2.1.0",
-    "popper.js": "^1.14.7",
+    "deparam.js": "^2.0.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.17.0",
+    "jquery": "^3.4.1",
+    "lzstorage": "^1.0.8",
+    "popper.js": "^1.15.0",
+    "silkrouter": "^3.0.0-beta.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "rollup": "^1.2.2",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.1",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "rollup": "^1.12.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.4",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-uglify": "^6.0.0"
+    "rollup-plugin-terser": "^4.0.4"
   },
   "heroku-run-build-script": true
 }
