@@ -1,6 +1,6 @@
 <div class="c-demo-1 js-demo-1 js-demos <% if (!path.match(/\/demos\/demo1/)) { %>d-none<% } %>">
-    <h2>Accordion with routes</h2>
-    <p>This example demonstrates how you can switch accordion tabs and change browser route along with it.</p>
+    <h2>Implementing routes on accordion</h2>
+    <p>This example below demonstrates how you can implement routes to switch accordion tabs.</p>
     <div class="accordion" id="accordionExample">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -45,34 +45,33 @@
             </div>
         </div>
     </div>
-    <p>Activate an accordion tab and try refreshing the page.</p>
+    <p>This step by step tutorial will teach you how you can use silk router to achieve this.</p>
     <br/>
-    <h3>Implementation:</h3>
-    <p>The implementation is fairly straight forward.</p>
+    <p>Implementation is fairly straight forward.</p>
     <b>Step 1:</b>
-    <p>Set <code>data-route</code> attribute to button link and collapse section.</p>
-    <p>We will use <code>data-route</code> to trigger route, as well as to filter sections for activation.</p>
-    <p>We will also use <code>hash</code> routing this time to demonstrate how hash routing works. We will set hash route as follows:</p>
+    <p>We have set <code>data-route</code> attribute to button as well as collapse section. We will use this attribute to set the page route.</p>
+    <p>This tutorial demonstrates <code>hash</code> routing. Hash routes start with a <code>#</code> symbol followed by path.</p>
     <pre>
         <code>
     &lt;button ... data-route="<b>#/accordion1</b>"&gt;...&lt;/button&gt;</code>
     </pre>
-    <p>For the three buttons above we will set routes as <code>#/accordion1</code>, <code>#/accordion2</code>, and <code>#/accordion3</code>.</p>
+    <p>The three routes we need to set are: <code>#/accordion1</code>, <code>#/accordion2</code>, and <code>#/accordion3</code>.</p>
     <b>Step 2:</b>
-    <p>Bind click event to button link.</p>
+    <p>Add a click event listener to buttons</p>
     <pre>
         <code>
     $('.btn-link').on('click', function (e) {
         if ($(this).attr('aria-expanded') === 'true') {
-            e.stopPropagation(); <span class="comment">// To register true accordion functionality</span>
+            e.stopPropagation();
         } else {
             router.set($(this).data('route'), <b>false, true</b>);
         }
     });</code>
     </pre>
-    <p>Notice the last two parameters in <code>router.set</code> method. The second last parameter is set to <code>false</code> so that we can register new history entries. The last parameter is set to <code>true</code> in order to prevent calling route handler. We want to let bootstrap handle the expand/collapse functionality of accordion.</p>
+    <p>The <code>set</code> method accepts three parameters. The first parameter is the route string. The second parameter is the <code>replaceMode</code> flag. With <code>replaceMode</code> set to <code>false</code>, silk router will allow creating new history entries. The third parameter is a <code>noTrigger</code> flag. No trigger tells the router to skip calling the handler function this time.</p>
+    <p>In our case, we want to skip the function call because bootstrap collapse handles the expand animation by itself. Our only role is to maintain the state of accordion when the page refreshes.</p>
     <b>Step 3:</b>
-    <p>Handle routing when user refreshes the page. Since the route is triggered by browser itself, the handler will be called anyway.</p>
+    <p>Maintain the current state of accordion when user refreshes the page.</p>
     <pre>
         <code>
     route(function (data) {
@@ -88,7 +87,5 @@
         }
     });</code>
     </pre>
-    <p>We have registered a generic route because it makes it easier to handle multiple urls in a single handler. A generic route listens to all kinds of route changes.</p>
-    <p>A specific route is registered by passing a route string parameter: <code>route('&lt;route&gt;', handler);</code></p>
-    <p>However, in cases where there are too many routes, registering individual handlers invite lots of issues especially related to performance.</p>
+    <p>We have registered a generic handler to handle such type of routing. A generic handler listens to all types of route changes.</p>
 </div>
