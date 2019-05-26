@@ -1,6 +1,6 @@
 {
   "name": "silkrouter-example",
-  "version": "3.0.0-beta.9",
+  "version": "3.0.0-beta.12",
   "description": "Silk router example",
   "main": "server.js",
   "scripts": {
