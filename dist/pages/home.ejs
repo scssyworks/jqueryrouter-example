@@ -1,6 +1,6 @@
 <div class="c-home-section js-home-section js-demos <% if (!path.match(/^\/$/)) { %>d-none<% } %>">
-    <h2>Silk router</h2>
-    <p>Silk router is an easy to use plugin for creating single page applications with routing.</p>
+    <h2>SILK router</h2>
+    <p>SILK router allows you to create page routes with ease.</p>
     <p>
         <pre>
             <code>
@@ -10,12 +10,12 @@
     <p>
         <pre>
             <code>
-    import {router, route} from 'silkrouter';
+    import { router, route } from 'jqueryrouter';
     route(...);
     router.set(...);</code>
         </pre>
     </p>
-    <h3>Installation</h3>
+    <h3>Install</h3>
     <p>
         <b>NPM</b>
         <pre>
@@ -36,14 +36,14 @@
         </pre>
     </p>
     <p>
-        <b>Please note: </b> Silk router is dependent on <code>deparam.js</code> and <code>lzstorage</code>. You can install these dependencies as follows:
+        <b>NOTE: </b> SILK router is dependent on external plugins <code>deparam.js</code> and <code>lzstorage</code>. You need to install them separately below:
         <pre>
             <code>
     npm install --save deparam.js lzstorage</code>
         </pre>
     </p>
     <h3>How does it work?</h3>
-    <p>Silk router provides an API similar to JavaScript events.</p>
+    <p>SILK router is simple to use. It is similar to JavaScript events.</p>
     <p><b>Events:</b></p>
     <pre>
         <code>
@@ -54,18 +54,19 @@
         <code>
     route('path', handler);</code>
     </pre>
-    <p><b>Trigger an events:</b></p>
+    <p><b>Triggering events:</b></p>
     <pre>
         <code>
     $('selector').trigger('event');</code>
     </pre>
-    <p><b>Set a route:</b></p>
+    <p><b>Triggering routes:</b></p>
      <pre>
         <code>
     router.set('path');</code>
     </pre>
-    <p>This website is a single page application that uses <b>silk router</b> under the hood. You can check it out how incredibly easy it is to use silk router.</p>
+    <p>This project is a live example of <b>SILK router</b> in action.</p>
     <p></p>
-    <p>Silk router supports following browsers:</p>
+    <p>SILK router uses history API and adds additional support for page load events.</p>
+    <p>SILK router supports following browsers:</p>
     <p><b>IE10+, Edge, Opera, Safari, Chrome, Firefox, Mobile browsers</b></p>
 </div>
