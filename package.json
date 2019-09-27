@@ -1,6 +1,6 @@
 {
   "name": "silkrouter-example",
-  "version": "3.0.2",
+  "version": "3.3.6",
   "description": "Silk router example",
   "main": "server.js",
   "scripts": {
@@ -15,19 +15,19 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "deparam.js": "^2.0.2",
-    "ejs": "^2.6.1",
-    "express": "^4.17.0",
+    "deparam.js": "^2.0.10",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "lzstorage": "^1.0.8",
     "popper.js": "^1.15.0",
-    "silkrouter": "^3.0.2"
+    "silkrouter": "^3.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "rollup": "^1.12.2",
-    "rollup-plugin-babel": "^4.3.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.4",
     "rollup-plugin-postcss": "^2.0.3",
