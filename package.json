@@ -1,6 +1,6 @@
 {
   "name": "silkrouter-example",
-  "version": "3.3.6",
+  "version": "3.4.3",
   "description": "Silk router example",
   "main": "server.js",
   "scripts": {
@@ -14,14 +14,14 @@
   "author": "Sachin Singh",
   "license": "MIT",
   "dependencies": {
+    "argon-storage": "^2.0.1",
     "bootstrap": "^4.3.1",
     "deparam.js": "^2.0.10",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
-    "lzstorage": "^1.0.8",
     "popper.js": "^1.15.0",
-    "silkrouter": "^3.3.6"
+    "silkrouter": "^3.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
