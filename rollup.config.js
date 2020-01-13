@@ -27,7 +27,7 @@ export default [
             }),
             commonjs({
                 namedExports: {
-                    "silkrouter": ["router", "route", "unroute"]
+                    "silkrouter": ["router", "route", "unroute", "routeIgnoreCase", "param", "deparam", "routeParams"]
                 }
             }),
             babel(),

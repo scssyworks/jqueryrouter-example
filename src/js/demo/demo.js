@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'bootstrap';
-import { router, route } from "silkrouter";
+import { router, route, unroute, param, deparam, routeParams, routeIgnoreCase } from "silkrouter";
 import 'bootstrap/dist/css/bootstrap.css';
 import './demo.css';
 
@@ -121,6 +121,13 @@ const demo = {
     init() {
         this.updateCache();
         this.bindEvents();
+        window.router = router;
+        window.route = route;
+        window.routeIgnoreCase = routeIgnoreCase;
+        window.param = param;
+        window.deparam = deparam;
+        window.routeParams = routeParams;
+        window.unroute = unroute;
         console.log("Demo initialized");
     }
 };
