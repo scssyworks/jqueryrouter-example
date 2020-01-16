@@ -1,6 +1,6 @@
 {
   "name": "silkrouter-example",
-  "version": "3.4.10",
+  "version": "3.5.0",
   "description": "Silk router example",
   "main": "server.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
-    "silkrouter": "^3.4.10"
+    "silkrouter": "^3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
